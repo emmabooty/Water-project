@@ -1,0 +1,47 @@
+/* This file contains the styles for the website. It defines the appearance of HTML elements, including layout, colors, fonts, and other visual aspects. */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+nav {
+    margin: 20px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #007bff;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

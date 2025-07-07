@@ -1,0 +1,86 @@
+<!-- filepath: /workspaces/Water-project/Water-project/src/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charity: Water</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://mail.google.com/mail/u/6?ui=2&ik=50014edd89&attid=0.0.1&permmsgid=msg-a:r-5962213747368960538&th=197dcf5fbe7291a6&view=fimg&fur=ip&permmsgid=msg-a:r-5962213747368960538&sz=s0-l75-ft&attbid=ANGjdJ9dNjXqq6ErViG2PLcNyjNLRWkmkEMnXrFA5V4irokW5d_DiIrm1Yx3y9NkECc0ZWMTpWyxu3jT3bMWwiFCir7nzkK2eIgCueued8BxJL-o5c1izdpb8amtmgQ&disp=emb&realattid=ii_mcqu74ik0&zw" alt="logo" style="height: 200px; width: auto;">
+    </div>
+    <nav>
+      <a href="#">SIGN IN</a>
+      <a href="#">ABOUT</a>
+      <a href="#">DONATE</a>
+      <a href="#">CONTACT</a>
+    </nav>
+  </header>
+
+  <section class="main-section">
+    <div class="left-content">
+      <h1>Quench</h1>
+      <h2>the Cause</h2>
+      <p>
+       💧Ever wake up at 3 a.m. feeling super thirsty? Most of us can just grab a glass of clean water without thinking twice. But for millions of people, clean H<sub>2</sub>O isn’t that easy to access.
+
+That’s where charity: water comes in. They fund local, community-led projects that bring clean, safe drinking water to people around the world — and 100% of donations go directly to the field.
+
+Small contributions can make a big impact. 💙  
+      </p>
+      <a href="anotherpage.html" class="cta-button">QUENCH THIRST NOW!</a>
+    </div>
+
+    <div class="right-images">
+      <img class="img-large" src="https://mail.google.com/mail/u/6?ui=2&ik=50014edd89&attid=0.3&permmsgid=msg-a:r-5962213747368960538&th=197dcf5fbe7291a6&view=att&disp=safe&realattid=f_mcqvybg31&zw" alt="Drilling Water">
+      <img class="img-small" src="https://mail.google.com/mail/u/6?ui=2&ik=50014edd89&attid=0.1&permmsgid=msg-a:r-5962213747368960538&th=197dcf5fbe7291a6&view=att&disp=safe&realattid=f_mcqvybgb2&zw" alt="Girl with water can">
+    </div>
+  </section>
+
+  <section class="form-section" id="signup">
+    <h2>Sign Up for Updates</h2>
+    <form onsubmit="showThankYou(event)">
+      <input type="email" placeholder="Enter your email" required>
+      <input type="submit" value="Sign Up">
+    </form>
+    <div class="thank-you-message" id="thankYou">🎉 Thank you for signing up!</div>
+  </section>
+
+  <script>
+    function showThankYou(event) {
+      event.preventDefault();
+      document.getElementById('thankYou').style.display = 'block';
+      launchConfetti();
+    }
+
+    function scrollToForm() {
+      document.getElementById('signup').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function launchConfetti() {
+      for (let i = 0; i < 50; i++) {
+        const confetti = document.createElement('div');
+        confetti.classList.add('confetti');
+        confetti.style.left = (window.innerWidth / 2) + 'px';
+        confetti.style.top = (window.innerHeight / 2) + 'px';
+        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        confetti.style.animationDuration = (Math.random() * 0.5 + 0.8) + 's';
+        const angle = Math.random() * 2 * Math.PI;
+        const distance = Math.random() * 300 + 100;
+        const x = Math.cos(angle) * distance;
+        const y = Math.sin(angle) * distance;
+        confetti.style.setProperty('--explode-transform', `translate(${x}px, ${y}px)`);
+        document.body.appendChild(confetti);
+
+        setTimeout(() => {
+          confetti.remove();
+        }, 1200);
+      }
+    }
+  </script>
+</body>
+</html>

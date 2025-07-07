@@ -1,0 +1,231 @@
+/* style.css */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background-color: #fff9e9;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #000;
+  background-color: #fff9e9;
+}
+
+nav a {
+  margin-left: 2rem;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 24px;
+  margin-right: 8px;
+}
+
+.main-section {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #ffce00;
+  padding: 2rem;
+}
+
+.left-content {
+  flex: 1 1 400px;
+  padding: 2rem;
+  color: black;
+}
+
+.left-content h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.left-content h2 {
+  font-size: 2.5rem;
+  color: black;
+  margin-top: 0.5rem;
+}
+
+.left-content p {
+  margin-top: 1rem;
+  line-height: 1.6;
+  max-width: 400px;
+  color: black;
+}
+
+.cta-button {
+  margin-top: 1.5rem;
+  background-color: #8fc7d1;
+  border: none;
+  border-radius: 30px;
+  padding: 0.8rem 2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #000;
+}
+
+.right-images {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.right-images img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.right-images .img-large,
+.right-images .img-small {
+  max-width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.form-section {
+  background-color: #ffce00; /* Use the same yellow as the main section */
+  padding: 2rem;
+  text-align: center;
+  border-radius: 12px; /* Added border-radius for a card look */
+}
+
+.form-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: black;
+}
+
+.form-section form {
+  display: inline-block;
+}
+
+input[type="email"] {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 250px;
+  margin-right: 1rem;
+}
+
+input[type="submit"] {
+  padding: 0.5rem 1rem;
+  background-color: #ffce00;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.thank-you-message {
+  display: none;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: green;
+  font-weight: bold;
+}
+
+@keyframes confetti-fall {
+  0% {transform: translateY(600px) rotate(0deg);}
+  100% {transform: translateY(-100px) rotate(360deg);}
+}
+
+@keyframes confetti-explode {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    /* Move confetti in a random direction and scale up for explosion */
+    transform: var(--explode-transform) scale(1.5) rotate(360deg);
+  }
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  /* Use the new explode animation */
+  animation: confetti-explode 1s ease-out forwards;
+}
+
+@media screen and (max-width: 900px) {
+  .main-section {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .left-content {
+    padding: 1rem;
+    max-width: 100%;
+    text-align: center;
+  }
+  .right-images {
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  .right-images img {
+    max-width: 120px;
+    height: 120px;
+  }
+  .logo img {
+    height: 60px;
+  }
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+  nav a {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    display: inline-block;
+    margin-top: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .main-section {
+    padding: 0.5rem;
+  }
+  .left-content h1 {
+    font-size: 2rem;
+  }
+  .left-content h2 {
+    font-size: 1.2rem;
+  }
+  .form-section {
+    padding: 1rem;
+  }
+  .logo img {
+    height: 36px;
+  }
+  .right-images img {
+    max-width: 80px;
+    height: 80px;
+  }
+  nav a {
+    font-size: 0.9rem;
+    margin: 0.3rem;
+  }
+}
